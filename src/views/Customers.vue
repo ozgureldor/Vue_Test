@@ -1,0 +1,70 @@
+<template>
+<div class="home">
+    <div class="col-md-6 centeralign">
+        <h1>Educations</h1>
+        <p>This Page Displays a list of Educations</p>
+         <div class="card centeralign addmargin" style="width: 18rem;" v-for="customer in customerlist" :key="customer.id">
+            <div class="card-body" v-on:click="setSelectedCustomer(customer.name)">
+                <h5 class="card-title">{{customer.title}}</h5>
+                <p class="card-text">{{customer.price}}</p>
+           
+
+                 
+            </div>
+        </div>
+    </div>
+ 
+</div>
+</template>
+<style scoped>
+
+.addmargin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vue-logo-back {
+    background-color: black;
+}
+
+</style>
+
+<script>
+
+// @ is an alias to /src
+import Display from '@/components/Display.vue'
+import axios from 'axios'
+
+export default {
+    name: 'customers',
+    mounted() {
+        axios({
+            method: "GET",
+            "url": "http://localhost:9981/api/education/educations/1"
+        }).then(response => {
+            this.customerlist = response.data;
+        }, error => {
+            // eslint-disable-next-line
+            console.error(error);
+        });
+    },
+    data() {
+        return {
+            customerlist: [],
+            selectedCustomer: ""
+        }
+    },
+    components: {
+        Display
+    },
+    methods: {
+        setSelectedCustomer: function(name) {
+            this.selectedCustomer = name;
+        },
+        goToDetailsPage: function(id) {
+            this.$router.push("/customerdetails/"+id);
+        }
+    }
+}
+
+</script>
