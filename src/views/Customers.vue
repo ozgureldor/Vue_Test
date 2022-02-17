@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <div class="col-md-6 centeralign">
-        <h1>Educations</h1>
+        <h1>Education List</h1>
         <p>This Page Displays a list of Educations</p>
          <div class="card centeralign addmargin" style="width: 18rem;" v-for="customer in customerlist" :key="customer.id">
             <div class="card-body" v-on:click="setSelectedCustomer(customer.name)">
@@ -41,7 +41,7 @@ export default {
     mounted() {
         axios({
             method: "GET",
-            "url": "http://localhost:9981/api/education/educations/1"
+            "url": "http://45.194.27.15:9001/api/education/educations/1"
         }).then(response => {
             this.customerlist = response.data;
         }, error => {
