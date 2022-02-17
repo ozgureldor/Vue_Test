@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <div class="col-md-6 centeralign">
-        <h1>Public Educations </h1>
+        <h1>Public Education List 100</h1>
         <p>This Page displays a list  of available Educations  1 </p>
          <div class="card centeralign addmargin" style="width: 18rem;" v-for="customer in customerlist" :key="customer.id">
             <div class="card-body" v-on:click="setSelectedCustomer(customer.name)">
