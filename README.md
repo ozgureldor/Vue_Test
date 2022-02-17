@@ -24,8 +24,11 @@ The Application runs on **localhost:8080**
 ## Application Design
 
 ### Views and components
+ 
 
-**Customers** : This View Displays a list of customers and gets the data from a json from assets folder
+ Education Service Connection to List Educations ;
+
+ 3rd Party API connection 
 
  
  

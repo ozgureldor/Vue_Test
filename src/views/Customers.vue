@@ -13,8 +13,8 @@
             </div>
         </div>
     </div>
- 
-</div>
+   <city-picker></city-picker>
+</div>  
 </template>
 <style scoped>
 
@@ -34,6 +34,7 @@
 // @ is an alias to /src
 import Display from '@/components/Display.vue'
 import axios from 'axios'
+import CityPicker from '../components/CityPicker.vue';
 
 export default {
     name: 'customers',
@@ -55,7 +56,8 @@ export default {
         }
     },
     components: {
-        Display
+        Display,
+        CityPicker
     },
     methods: {
         setSelectedCustomer: function(name) {
